@@ -128,7 +128,253 @@ Examples that normally do not require a HANDOFF update:
 - additional tests for already documented behavior;
 - internal cleanup that does not affect continuation context.
 
-## 5. Accuracy rules
+## 5. HANDOFF section guidance
+
+When updating `docs/HANDOFF.md`, use the sections as follows.
+
+### Current State
+
+Describe the project's present state at a high level.
+
+Include only facts that are necessary to understand where development currently stands.
+
+Do not repeat detailed implementation history.
+
+### Completed
+
+Record completed capabilities, milestones, or project-level work that remains relevant to continuation.
+
+Do not list every commit, minor edit, or completed subtask.
+
+Remove entries when they are no longer useful for understanding the current state.
+
+### Important Decisions
+
+Summarize decisions that materially affect ongoing work.
+
+Keep entries concise.
+
+Detailed rationale belongs in `docs/DECISIONS.md`.
+
+Do not duplicate full decision records here.
+
+### Known Issues and Limitations
+
+Record unresolved issues, blockers, limitations, or important technical debt that may affect future work.
+
+Include only observed or accepted issues.
+
+Remove items when they are resolved.
+
+### Environment and Dependencies
+
+Record environment requirements or dependencies that another agent needs in order to continue successfully.
+
+Examples include:
+
+- required runtime or tool versions;
+- required services;
+- important environment configuration;
+- external dependencies;
+- known platform constraints.
+
+Do not duplicate general setup documentation unless the information is essential for continuation.
+
+### Current Focus
+
+Describe the area or objective currently being worked on.
+
+Keep this section short.
+
+It should answer:
+
+> What part of the project are we working on now?
+
+### Next Recommended Step
+
+Describe the most logical next task based on the current repository state.
+
+It should be actionable and specific enough for another agent to continue without reconstructing the plan.
+
+Do not use this section as a long-term roadmap.
+
+### Notes for the Next Agent
+
+Record concise continuation context that:
+
+- is important for the next session;
+- is not obvious from the repository;
+- does not belong more naturally in another project document.
+
+Avoid repeating information already maintained elsewhere.
+
+HANDOFF is a current-state document, not an append-only history.
+
+When information is no longer relevant to continuation:
+- update it;
+- replace it;
+- or remove it.
+
+## 6. ARCHITECTURE section guidance
+
+When updating `docs/ARCHITECTURE.md`, use the sections as follows.
+
+### Overview
+
+Describe the system at a high level.
+
+Explain what the project is and what architectural shape it currently has.
+
+Keep this section concise.
+
+### System Structure
+
+Describe the major structural parts of the system and how they relate to each other.
+
+Focus on architectural boundaries rather than file-level details.
+
+### Components
+
+Describe the main components and their responsibilities.
+
+Include only components that are architecturally relevant.
+
+Do not list every module, file, or class.
+
+### Data and Control Flow
+
+Describe important flows of data or control through the system.
+
+Include only flows necessary to understand how major parts interact.
+
+Do not document trivial internal call chains.
+
+### External Integrations
+
+Describe external systems, services, APIs, platforms, or infrastructure that materially affect the architecture.
+
+Include the role of each integration.
+
+Do not list incidental tools that do not affect system design.
+
+### Runtime and Deployment
+
+Describe how the system runs in practice.
+
+Include relevant runtime relationships, services, processes, containers, deployment units, or execution environments.
+
+Do not turn this section into a full operations manual.
+
+### Architectural Constraints
+
+Record constraints that materially influence system design.
+
+Examples include:
+
+- required technologies;
+- compatibility requirements;
+- security boundaries;
+- deployment restrictions;
+- performance constraints;
+- architectural rules that future changes must preserve.
+
+Do not record temporary implementation preferences as architectural constraints.
+
+### Known Architectural Limitations
+
+Record known structural limitations, architectural debt, or constraints that may affect future development.
+
+Include only limitations that are currently real and relevant.
+
+Remove or update them when they are resolved.
+
+ARCHITECTURE is a current-state document, not a design diary.
+
+When the architecture changes:
+- update the affected sections;
+- remove obsolete descriptions;
+- preserve unchanged information;
+- do not append historical states.
+
+## 7. DECISIONS section guidance
+
+Use `docs/DECISIONS.md` to preserve important accepted technical and architectural decisions.
+
+Create or update a decision record when:
+
+- a non-trivial technical or architectural choice is accepted;
+- multiple reasonable options existed and the chosen option affects future work;
+- the rationale would be important for another agent or developer to understand later;
+- an existing decision is replaced or materially changed.
+
+Do not create decision records for:
+
+- routine implementation choices;
+- trivial refactoring;
+- formatting or naming changes;
+- temporary experiments;
+- decisions whose rationale is obvious from the code and unlikely to matter later.
+
+### Decision IDs
+
+Use sequential identifiers:
+
+- `DEC-001`
+- `DEC-002`
+- `DEC-003`
+
+Do not reuse identifiers.
+
+### Status
+
+Use one of the following statuses:
+
+- `Accepted`
+- `Superseded`
+
+Do not silently rewrite historical decisions as if the previous choice never existed.
+
+### Context
+
+Describe the problem, constraint, or trade-off that required a decision.
+
+Keep this section focused on why a decision was necessary.
+
+### Decision
+
+State the accepted choice clearly.
+
+Describe what was decided, not the full implementation history.
+
+### Rationale
+
+Explain why the chosen option was preferred over relevant alternatives.
+
+Include only rationale that is important for future understanding.
+
+### Consequences
+
+Record important effects of the decision, including when relevant:
+
+- trade-offs;
+- constraints introduced;
+- known limitations;
+- follow-up work;
+- compatibility implications.
+
+### Superseding a decision
+
+When a decision is replaced:
+
+1. Keep the original decision record.
+2. Change its status to `Superseded`.
+3. Reference the new decision that replaces it.
+4. Add the new decision as a separate record.
+5. Do not delete the historical rationale.
+
+DECISIONS is a decision record, not a task log or changelog.
+
+## 8. Accuracy rules
 
 When updating documentation:
 
@@ -142,7 +388,7 @@ When updating documentation:
 
 If documentation conflicts with the repository, resolve the conflict using repository state as factual evidence.
 
-## 6. Minimal-change principle
+## 9. Minimal-change principle
 
 Documentation maintenance should be proportional to the completed task.
 
@@ -159,7 +405,7 @@ Avoid:
 - updating timestamps without substantive changes;
 - expanding documentation beyond what is needed to represent the actual state.
 
-## 7. Final verification
+## 10. Final verification
 
 Before considering documentation maintenance complete:
 

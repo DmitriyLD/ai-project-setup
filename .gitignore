@@ -1,0 +1,30 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE / local tooling
+.vscode/
+.idea/
+.mimocode/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Python cache, if helper scripts appear later
+__pycache__/
+*.py[cod]
+
+# Node dependencies, if tooling appears later
+node_modules/

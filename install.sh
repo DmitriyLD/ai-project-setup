@@ -8,7 +8,9 @@ TARGET_FILES=(
   "docs/HANDOFF.md"
   "docs/ARCHITECTURE.md"
   "docs/DECISIONS.md"
-  "docs/workflows/documentation-maintainer.md"
+  "docs/workflows/handoff.md"
+  "docs/workflows/architecture.md"
+  "docs/workflows/decision.md"
 )
 
 usage() {

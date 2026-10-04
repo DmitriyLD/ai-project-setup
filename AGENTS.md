@@ -37,14 +37,13 @@ If repository state conflicts with documentation, treat the implementation as fa
 
 ## 3. Task completion
 
-A task is complete only when applicable:
+A task is complete only when:
 
 1. The requested implementation is finished.
 2. Relevant tests, checks, or validation have been performed.
 3. The resulting changes have been reviewed.
-4. Documentation impact has been evaluated.
-5. Relevant documentation has been updated when necessary.
-6. `docs/HANDOFF.md` accurately reflects the project state when the task materially changed it.
+4. HANDOFF checked according to section 5.
+5. Documentation explicitly required by the task or an invoked workflow has been updated.
 
 Do not perform documentation updates mechanically after every small change.
 
@@ -52,49 +51,53 @@ Do not perform documentation updates mechanically after every small change.
 
 Documentation is part of the project state.
 
-Use the established project documentation language for human-facing documentation.
+### Language policy
 
-If no documentation language has been established yet, follow the documentation workflow to determine it.
+Project documentation does not have to use the same language as these agent instructions.
 
-At the end of a completed task, evaluate whether the changes affect project documentation.
+When project documentation is still empty or has no established language:
 
-Use:
+1. Inspect the existing human-facing project documentation, such as `README.md`.
+2. Consider the language primarily used by the user for project work.
+3. If one language is clearly established, use it for `docs/HANDOFF.md`, `docs/ARCHITECTURE.md`, and `docs/DECISIONS.md`.
+4. If the language is ambiguous, propose one documentation language to the user before substantially populating these files.
 
-`docs/workflows/documentation-maintainer.md`
+Once a documentation language has been established, keep these documents consistent unless the user explicitly requests a change.
 
-for the detailed documentation maintenance process.
+Do not switch languages between documentation updates without a clear reason.
 
-Update only documentation affected by the completed task.
+Template comments, agent instructions, and workflow instructions may remain in English regardless of the selected project documentation language.
 
-Do not modify documentation merely to create activity or keep timestamps current.
+### General principles
+
+- Repository state is source of truth.
+- Document only what actually exists.
+- Never invent commands, files, APIs, components, or behavior.
+- Distinguish current implementation from future plans.
+- Prefer targeted edits over wholesale rewrites.
+- Update only documentation explicitly required by the task or an invoked workflow.
+
+### Documentation workflows
+
+Use workflows:
+- `docs/workflows/handoff.md` — to update HANDOFF
+- `docs/workflows/architecture.md` — to synchronize ARCHITECTURE
+- `docs/workflows/decision.md` — to record a decision
 
 ## 5. HANDOFF policy
 
 `docs/HANDOFF.md` describes the state from which another development session or agent should be able to continue.
 
-At the end of a completed task, determine whether the task materially changed that state.
+After completing a task, apply the test:
 
-Update `docs/HANDOFF.md` automatically when necessary.
+> Would the current `docs/HANDOFF.md` mislead the next agent about the current project state or continuation point?
 
-Do not ask the user whether HANDOFF should be updated.
+If yes:
+- use `docs/workflows/handoff.md` to update HANDOFF
+- do not ask the user for permission
 
-HANDOFF should normally be updated when the task changes one or more of the following:
-
-- implemented capabilities;
-- project architecture or structure;
-- important technical decisions;
-- dependencies or environment requirements;
-- known issues or limitations;
-- current development status;
-- the recommended next step.
-
-Do not update HANDOFF for minor edits that do not change the state another agent needs to understand.
-
-A useful test is:
-
-> Would the current HANDOFF mislead the next agent after this task?
-
-If yes, update it.
+If no:
+- leave HANDOFF unchanged
 
 ## 6. Sources of truth
 
@@ -111,20 +114,7 @@ Do not duplicate large sections of information between these files.
 
 Each piece of information should have one primary home.
 
-## 7. Documentation accuracy
-
-Documentation must describe the repository as it actually exists.
-
-Never:
-
-- document unfinished work as completed;
-- invent commands, files, APIs, components, or behavior;
-- preserve outdated statements when the task makes them false;
-- add speculative plans to architecture documentation as if they were implemented.
-
-When future work needs to be recorded, clearly distinguish it from current implementation.
-
-## 8. Scope and autonomy
+## 7. Scope and autonomy
 
 Perform the requested task without expanding its scope unnecessarily.
 
@@ -139,7 +129,7 @@ The agent should request user input only when a decision genuinely requires prod
 
 Routine documentation maintenance does not require user approval.
 
-## 9. Project-specific instructions
+## 8. Project-specific instructions
 
 Project-specific rules may extend this file but should not duplicate the general rules above.
 

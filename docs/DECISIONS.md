@@ -4,8 +4,8 @@
 This file records important accepted technical and architectural decisions.
 
 Maintain it according to:
-- AGENTS.md
-- docs/workflows/documentation-maintainer.md
+- AGENTS.md section 4
+- docs/workflows/decision.md
 
 Record only decisions whose rationale is important for future development.
 Do not use this file as a changelog or task log.

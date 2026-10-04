@@ -52,6 +52,10 @@ Do not perform documentation updates mechanically after every small change.
 
 Documentation is part of the project state.
 
+Use the established project documentation language for human-facing documentation.
+
+If no documentation language has been established yet, follow the documentation workflow to determine it.
+
 At the end of a completed task, evaluate whether the changes affect project documentation.
 
 Use:

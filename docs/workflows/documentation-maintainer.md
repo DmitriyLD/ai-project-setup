@@ -8,6 +8,26 @@ Documentation updates are part of task completion when the completed task materi
 
 The workflow must not create documentation changes mechanically after every edit.
 
+## Documentation language
+
+Project documentation does not have to use the same language as these agent instructions.
+
+When project documentation is still empty or has no established language:
+
+1. Inspect the existing human-facing project documentation, such as `README.md`.
+2. Consider the language primarily used by the user for project work.
+3. If one language is clearly established, use it for:
+   - `docs/HANDOFF.md`
+   - `docs/ARCHITECTURE.md`
+   - `docs/DECISIONS.md`
+4. If the language is ambiguous, propose one documentation language to the user before substantially populating these files.
+
+Once a documentation language has been established, keep these documents consistent unless the user explicitly requests a change.
+
+Do not switch languages between documentation updates without a clear reason.
+
+Template comments, agent instructions, and workflow instructions may remain in English regardless of the selected project documentation language.
+
 ## 1. When to run this workflow
 
 Run this workflow after a completed task when one or more of the following may have changed:

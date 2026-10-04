@@ -162,21 +162,33 @@ Do not repeat detailed implementation history.
 
 ### Completed
 
-Record completed capabilities, milestones, or project-level work that remains relevant to continuation.
+Record implemented capabilities, milestones, or project-level results that remain part of the project's current state and are relevant to continuation.
 
-Do not list every commit, minor edit, or completed subtask.
+Describe what is now true about the project, not the sequence of actions performed in the most recent task.
+
+Do not use this section as a task log or changelog.
+
+Avoid entries that only report process activity, such as:
+- documentation was updated;
+- tests were run;
+- files were refactored or moved;
+- a minor implementation step was completed.
+
+Include such details only when they materially affect what the next agent needs to understand about the current project state.
 
 Remove entries when they are no longer useful for understanding the current state.
 
 ### Important Decisions
 
-Summarize decisions that materially affect ongoing work.
+Summarize only important accepted decisions that materially affect ongoing work and are also recorded in docs/DECISIONS.md.
 
-Keep entries concise.
+If a decision does not justify a separate record in docs/DECISIONS.md, do not list it here.
 
-Detailed rationale belongs in `docs/DECISIONS.md`.
+Keep entries concise and use them as pointers to relevant decision records rather than standalone rationale.
 
 Do not duplicate full decision records here.
+
+Leave this section empty when there are no recorded decisions that materially affect continuation.
 
 ### Known Issues and Limitations
 
@@ -249,9 +261,13 @@ Keep this section concise.
 
 ### System Structure
 
-Describe the major structural parts of the system and how they relate to each other.
+Describe the major architectural parts of the application or system and how they relate to each other.
 
-Focus on architectural boundaries rather than file-level details.
+Focus on runtime structure, architectural boundaries, modules, services, and their relationships rather than on the repository as a whole.
+
+Do not use this section as a generic repository tree.
+
+Do not list support or documentation files such as `README.md`, `AGENTS.md`, or `docs/` unless they have architectural significance.
 
 ### Components
 

@@ -82,7 +82,9 @@ Update when the task materially changes:
 - system structure;
 - major components;
 - component responsibilities;
+- module or service boundaries;
 - important data flows;
+- control flow between components;
 - integrations;
 - runtime relationships;
 - architectural constraints.
@@ -165,6 +167,8 @@ Do not repeat detailed implementation history.
 Record implemented capabilities, milestones, or project-level results that remain part of the project's current state and are relevant to continuation.
 
 Describe what is now true about the project, not the sequence of actions performed in the most recent task.
+
+Prefer present-state wording over action-history wording. Avoid phrasing such as "created", "moved", "updated", or "refactored" when the same fact can be stated as a current property of the project.
 
 Do not use this section as a task log or changelog.
 

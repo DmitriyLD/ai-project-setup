@@ -14,6 +14,7 @@ Each substantial statement in a decision record must have a confirmed source.
 
 - Context, Decision, Rationale, Consequences, and alternatives must come from explicitly recorded decision context: a user decision, existing documentation, `docs/HANDOFF.md` when the reason is actually written down, or another available project source.
 - Rationale must never be reconstructed, guessed, or inferred to sound reasonable.
+- Provenance (the source or origin of a decision) is not a Rationale. The fact that a decision came from a user request, a task requirement, an existing implementation, or `docs/HANDOFF.md` says where it came from, not why it was chosen.
 - When Rationale is explicitly absent: the record is not created through the permanent-docs-sync workflow. The candidate stays in HANDOFF and is reported as skipped due to missing confirmed rationale.
 - Consequences must be confirmed effects, not hypothetical ones.
 
@@ -45,6 +46,10 @@ State the accepted choice clearly. Describe what was decided, not the full imple
 
 Explain why the chosen option was preferred over relevant alternatives, using only explicitly recorded reasoning. Include only rationale that is important for future understanding. If the reasoning was not recorded, leave this record out rather than writing plausible-sounding text.
 
+Rationale must contain an explicitly recorded reason, justification, trade-off, or motive for the choice. It cannot be reconstructed from the wording of the Decision itself or from the fact that it was implemented.
+
+Apply this test to every recorded rationale: "Does the recorded source explain why this option was chosen, rather than merely who requested it or where it was recorded?"
+
 ### Consequences
 
 Record important confirmed effects of the decision, including when relevant:
@@ -74,4 +79,5 @@ Avoid:
 - using DECISIONS as a task log;
 - using DECISIONS as a changelog;
 - inventing Context, Rationale, Consequences, or alternatives;
-- creating records for decisions whose rationale was never recorded.
+- creating records for decisions whose rationale was never recorded;
+- treating a task requirement, a user request, or an implementation fact as a sufficient Rationale ("the task required it", "the user asked for it", "it is already implemented").

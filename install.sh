@@ -9,6 +9,7 @@ TARGET_FILES=(
   "docs/ARCHITECTURE.md"
   "docs/DECISIONS.md"
   "docs/workflows/handoff.md"
+  "docs/workflows/permanent-docs-sync.md"
   "docs/workflows/architecture.md"
   "docs/workflows/decision.md"
 )

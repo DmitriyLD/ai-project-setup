@@ -1,14 +1,19 @@
 # Project Decisions
 
 <!--
-This file records important accepted technical and architectural decisions.
+This file is a strict permanent register of accepted technical and architectural decisions.
 
 Maintain it according to:
 - AGENTS.md section 4
 - docs/workflows/decision.md
 
-Record only decisions whose rationale is important for future development.
+Record only decisions whose rationale is explicitly confirmed in an available source.
+Do not invent Context, Rationale, Consequences, or alternatives. Do not guess why a choice was made.
 Do not use this file as a changelog or task log.
+
+HANDOFF may contain decision candidates, but it is not evidence by itself.
+Promotion from candidates happens only via:
+- docs/workflows/permanent-docs-sync.md
 -->
 
 ## Active Decisions

@@ -81,12 +81,15 @@ Template comments, agent instructions, and workflow instructions may remain in E
 
 Use workflows:
 - `docs/workflows/handoff.md` — to update HANDOFF
+- `docs/workflows/permanent-docs-sync.md` — to promote verified candidates from HANDOFF into permanent documentation (explicit invocation only)
 - `docs/workflows/architecture.md` — to synchronize ARCHITECTURE
 - `docs/workflows/decision.md` — to record a decision
 
+`docs/workflows/permanent-docs-sync.md` is never run automatically after a task. Its detailed procedure lives in that file and is not duplicated here.
+
 ## 5. HANDOFF policy
 
-`docs/HANDOFF.md` describes the state from which another development session or agent should be able to continue.
+`docs/HANDOFF.md` is the working continuation buffer: the state from which another development session or agent should be able to continue. It may be slightly raw as long as it stays useful and factually correct.
 
 After completing a task, apply the test:
 
@@ -104,11 +107,13 @@ If no:
 Use the following responsibility model:
 
 - `AGENTS.md` — permanent agent rules;
-- `docs/ARCHITECTURE.md` — current project architecture;
-- `docs/DECISIONS.md` — important accepted decisions and their rationale;
-- `docs/HANDOFF.md` — current project state and continuation point;
+- `docs/ARCHITECTURE.md` — strict normalized description of the current architecture;
+- `docs/DECISIONS.md` — strict register of accepted decisions with confirmed rationale;
+- `docs/HANDOFF.md` — working continuation context and candidate signals for permanent documentation;
 - `docs/workflows/` — detailed reusable project workflows;
 - repository code and configuration — factual implementation state.
+
+HANDOFF is not a source of truth for permanent documentation. HANDOFF may contain signals/candidates for ARCHITECTURE or DECISIONS; those candidates must be verified against the sources of truth before being recorded. `docs/workflows/permanent-docs-sync.md` describes that promotion process.
 
 Do not duplicate large sections of information between these files.
 
